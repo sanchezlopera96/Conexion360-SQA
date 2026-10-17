@@ -1,0 +1,1224 @@
+{
+ "fuente": "Azure DevOps ingenieria-requisitos / Conexión360 (lectura por MCP)",
+ "fecha_lectura": "2026-10-17",
+ "casos": [
+  {
+   "id": 304,
+   "titulo": "Test HU7-1- Verificar que se obtenga la información asociada a una guía",
+   "hu": [
+    {
+     "id": 34,
+     "titulo": "HU7-Buscar un envío por número de guía"
+    }
+   ],
+   "responsable": "Yesid Alexander García López",
+   "tipo": "Automatizado",
+   "suite": "TS_P1_RutaCritica",
+   "nota": ""
+  },
+  {
+   "id": 305,
+   "titulo": "Test HU7-2 - Verificar que no se permita la búsqueda con caracteres especiales diferentes de guion",
+   "hu": [
+    {
+     "id": 34,
+     "titulo": "HU7-Buscar un envío por número de guía"
+    }
+   ],
+   "responsable": "Yesid Alexander García López",
+   "tipo": "Automatizado",
+   "suite": "TS_P1_RutaCritica",
+   "nota": ""
+  },
+  {
+   "id": 306,
+   "titulo": "Test HU7-3 - Verificar búsqueda de guía sin resultados asociados",
+   "hu": [
+    {
+     "id": 34,
+     "titulo": "HU7-Buscar un envío por número de guía"
+    }
+   ],
+   "responsable": "Yesid Alexander García López",
+   "tipo": "Automatizado",
+   "suite": "TS_P1_RutaCritica",
+   "nota": ""
+  },
+  {
+   "id": 307,
+   "titulo": "Test HU1-1 Verificar que se listen mis envios",
+   "hu": [
+    {
+     "id": 28,
+     "titulo": "HU1-Lista de mis envíos activos"
+    }
+   ],
+   "responsable": "Eider Santiago Sánchez Lopera",
+   "tipo": "Automatizado",
+   "suite": "TS_P1_RutaCritica",
+   "nota": ""
+  },
+  {
+   "id": 308,
+   "titulo": "Test HU1-2 Verificar el filtro por estado para mis envíos",
+   "hu": [
+    {
+     "id": 28,
+     "titulo": "HU1-Lista de mis envíos activos"
+    }
+   ],
+   "responsable": "Eider Santiago Sánchez Lopera",
+   "tipo": "Automatizado",
+   "suite": "TS_P1_RutaCritica",
+   "nota": ""
+  },
+  {
+   "id": 309,
+   "titulo": "Test HU2-1 - Verificar inicio de sesión exitoso con credenciales válidas",
+   "hu": [
+    {
+     "id": 121,
+     "titulo": "HU2: Inicio de sesión"
+    }
+   ],
+   "responsable": "Eider Santiago Sánchez Lopera",
+   "tipo": "Automatizado",
+   "suite": "TS_P1_RutaCritica",
+   "nota": ""
+  },
+  {
+   "id": 310,
+   "titulo": "Test HU2-2 - Verificar que no se permita el inicio de sesión con contraseña incorrecta",
+   "hu": [
+    {
+     "id": 121,
+     "titulo": "HU2: Inicio de sesión"
+    }
+   ],
+   "responsable": "Eider Santiago Sánchez Lopera",
+   "tipo": "Automatizado",
+   "suite": "TS_P1_RutaCritica",
+   "nota": ""
+  },
+  {
+   "id": 311,
+   "titulo": "Test HU2-3 - Verificar inicio de sesión con un correo no registrado",
+   "hu": [
+    {
+     "id": 121,
+     "titulo": "HU2: Inicio de sesión"
+    }
+   ],
+   "responsable": "Eider Santiago Sánchez Lopera",
+   "tipo": "Automatizado",
+   "suite": "TS_P1_RutaCritica",
+   "nota": ""
+  },
+  {
+   "id": 312,
+   "titulo": "Test HU2-4 - Verificar que una ruta protegida redirija al inicio de sesión sin sesión activa",
+   "hu": [
+    {
+     "id": 121,
+     "titulo": "HU2: Inicio de sesión"
+    }
+   ],
+   "responsable": "Eider Santiago Sánchez Lopera",
+   "tipo": "Automatizado",
+   "suite": "TS_P1_RutaCritica",
+   "nota": ""
+  },
+  {
+   "id": 313,
+   "titulo": "Test HU6-1 - Verificar bloqueo de la cuenta al tercer intento fallido",
+   "hu": [
+    {
+     "id": 214,
+     "titulo": "HU6: Bloquear acceso tras 3 intentos fallidos"
+    }
+   ],
+   "responsable": "Eider Santiago Sánchez Lopera",
+   "tipo": "Automatizado",
+   "suite": "TS_P1_RutaCritica",
+   "nota": ""
+  },
+  {
+   "id": 314,
+   "titulo": "Test HU6-2 - Verificar que 2 intentos fallidos no bloqueen la cuenta",
+   "hu": [
+    {
+     "id": 214,
+     "titulo": "HU6: Bloquear acceso tras 3 intentos fallidos"
+    }
+   ],
+   "responsable": "Eider Santiago Sánchez Lopera",
+   "tipo": "Automatizado",
+   "suite": "TS_P1_RutaCritica",
+   "nota": ""
+  },
+  {
+   "id": 315,
+   "titulo": "Test HU6-3 - Verificar desbloqueo de la cuenta mediante el correo de Auth0",
+   "hu": [
+    {
+     "id": 214,
+     "titulo": "HU6: Bloquear acceso tras 3 intentos fallidos"
+    }
+   ],
+   "responsable": "Eider Santiago Sánchez Lopera",
+   "tipo": "Manual",
+   "suite": "",
+   "nota": "Requiere abrir el correo de desbloqueo de Auth0"
+  },
+  {
+   "id": 316,
+   "titulo": "Test HU3-1 - Verificar que el cliente solo visualice sus propios envíos",
+   "hu": [
+    {
+     "id": 126,
+     "titulo": "HU3: Visualización envios"
+    }
+   ],
+   "responsable": "Eider Santiago Sánchez Lopera",
+   "tipo": "Automatizado",
+   "suite": "TS_P1_RutaCritica",
+   "nota": ""
+  },
+  {
+   "id": 317,
+   "titulo": "Test HU3-2 - Verificar que el cliente no pueda abrir el detalle de un envío ajeno por URL",
+   "hu": [
+    {
+     "id": 126,
+     "titulo": "HU3: Visualización envios"
+    }
+   ],
+   "responsable": "Eider Santiago Sánchez Lopera",
+   "tipo": "Automatizado",
+   "suite": "TS_P1_RutaCritica",
+   "nota": ""
+  },
+  {
+   "id": 318,
+   "titulo": "Test HU3-3 - Verificar que la API rechace la consulta de un envío ajeno",
+   "hu": [
+    {
+     "id": 126,
+     "titulo": "HU3: Visualización envios"
+    }
+   ],
+   "responsable": "Eider Santiago Sánchez Lopera",
+   "tipo": "Automatizado",
+   "suite": "TS_P1_RutaCritica",
+   "nota": ""
+  },
+  {
+   "id": 319,
+   "titulo": "Test HU4-1 - Verificar que el empleado visualice los envíos de todos los clientes",
+   "hu": [
+    {
+     "id": 127,
+     "titulo": "HU4: Acceso envios clientes"
+    }
+   ],
+   "responsable": "Eider Santiago Sánchez Lopera",
+   "tipo": "Automatizado",
+   "suite": "TS_P1_RutaCritica",
+   "nota": ""
+  },
+  {
+   "id": 320,
+   "titulo": "Test HU4-2 - Verificar que un cliente no acceda a la vista global de envíos",
+   "hu": [
+    {
+     "id": 127,
+     "titulo": "HU4: Acceso envios clientes"
+    }
+   ],
+   "responsable": "Eider Santiago Sánchez Lopera",
+   "tipo": "Automatizado",
+   "suite": "TS_P1_RutaCritica",
+   "nota": ""
+  },
+  {
+   "id": 321,
+   "titulo": "Test HU1-3 - Verificar mensaje cuando el cliente no tiene envíos activos",
+   "hu": [
+    {
+     "id": 28,
+     "titulo": "HU1-Lista de mis envíos activos"
+    }
+   ],
+   "responsable": "Eider Santiago Sánchez Lopera",
+   "tipo": "Automatizado",
+   "suite": "TS_P1_RutaCritica",
+   "nota": ""
+  },
+  {
+   "id": 322,
+   "titulo": "Test HU7-4 - Verificar búsqueda con el campo de guía vacío",
+   "hu": [
+    {
+     "id": 34,
+     "titulo": "HU7-Buscar un envío por número de guía"
+    }
+   ],
+   "responsable": "Eider Santiago Sánchez Lopera",
+   "tipo": "Automatizado",
+   "suite": "TS_P1_RutaCritica",
+   "nota": ""
+  },
+  {
+   "id": 323,
+   "titulo": "Test HU7-5 - Verificar que el cliente no obtenga datos al buscar una guía de otro cliente",
+   "hu": [
+    {
+     "id": 34,
+     "titulo": "HU7-Buscar un envío por número de guía"
+    }
+   ],
+   "responsable": "Eider Santiago Sánchez Lopera",
+   "tipo": "Automatizado",
+   "suite": "TS_P1_RutaCritica",
+   "nota": ""
+  },
+  {
+   "id": 324,
+   "titulo": "Test HU3-1 - Verificar que se muestre el detalle completo de un envío propio",
+   "hu": [
+    {
+     "id": 30,
+     "titulo": "HU3-Ver el detalle de un envío"
+    }
+   ],
+   "responsable": "Eider Santiago Sánchez Lopera",
+   "tipo": "Automatizado",
+   "suite": "TS_P1_RutaCritica",
+   "nota": ""
+  },
+  {
+   "id": 325,
+   "titulo": "Test HU3-2 - Verificar el detalle de un envío inexistente",
+   "hu": [
+    {
+     "id": 30,
+     "titulo": "HU3-Ver el detalle de un envío"
+    }
+   ],
+   "responsable": "Eider Santiago Sánchez Lopera",
+   "tipo": "Automatizado",
+   "suite": "TS_P1_RutaCritica",
+   "nota": ""
+  },
+  {
+   "id": 326,
+   "titulo": "Test HU1-1 - Verificar que un cambio de estado en la fuente se refleje automáticamente",
+   "hu": [
+    {
+     "id": 39,
+     "titulo": "HU1-Actualizar automáticamente los estados de los envíos"
+    }
+   ],
+   "responsable": "Eider Santiago Sánchez Lopera",
+   "tipo": "Manual",
+   "suite": "",
+   "nota": "Requiere cambiar datos en la fuente y esperar el ETL"
+  },
+  {
+   "id": 327,
+   "titulo": "Test HU1-2 - Verificar el manejo de un estado no válido recibido desde la fuente",
+   "hu": [
+    {
+     "id": 39,
+     "titulo": "HU1-Actualizar automáticamente los estados de los envíos"
+    }
+   ],
+   "responsable": "Eider Santiago Sánchez Lopera",
+   "tipo": "Manual",
+   "suite": "",
+   "nota": "Requiere cambiar datos en la fuente y esperar el ETL"
+  },
+  {
+   "id": 328,
+   "titulo": "Test HU1-5 - Verificar que el sistema rechace entradas con scripts o código malicioso",
+   "hu": [
+    {
+     "id": 209,
+     "titulo": "HU1: Proteger la aplicación contra ataques"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Automatizado",
+   "suite": "TS_P1_RutaCritica",
+   "nota": ""
+  },
+  {
+   "id": 329,
+   "titulo": "Test HU1-1 - Verificar que una notificación marcada como leída persista y disminuya el contador",
+   "hu": [
+    {
+     "id": 43,
+     "titulo": "HU1-Recibir notificaciones cuando el estado de mi envío cambie"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Manual",
+   "suite": "",
+   "nota": "Notificaciones: confirmar si el front ya usa backend real"
+  },
+  {
+   "id": 330,
+   "titulo": "Test HU3-1 - Verificar el reintento automático de una notificación tras un fallo temporal",
+   "hu": [
+    {
+     "id": 45,
+     "titulo": "HU3-Reintentar el envío de notificaciones fallidas"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Manual",
+   "suite": "",
+   "nota": "Requiere simular la caída del canal de envío"
+  },
+  {
+   "id": 331,
+   "titulo": "Test HU3-2 - Verificar que se respete el número máximo de reintentos de una notificación",
+   "hu": [
+    {
+     "id": 45,
+     "titulo": "HU3-Reintentar el envío de notificaciones fallidas"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Manual",
+   "suite": "",
+   "nota": "Requiere simular la caída del canal de envío"
+  },
+  {
+   "id": 332,
+   "titulo": "Test HU3-3 - Verificar la coherencia de los estados de una notificación durante los reintentos",
+   "hu": [
+    {
+     "id": 45,
+     "titulo": "HU3-Reintentar el envío de notificaciones fallidas"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Manual",
+   "suite": "",
+   "nota": "Requiere simular la caída del canal de envío"
+  },
+  {
+   "id": 333,
+   "titulo": "Test HU1-2 - Verificar que el cliente reciba en tiempo real la notificación del cambio de estado de su envío",
+   "hu": [
+    {
+     "id": 43,
+     "titulo": "HU1-Recibir notificaciones cuando el estado de mi envío cambie"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Manual",
+   "suite": "",
+   "nota": "Requiere disparar eventos en el backend (SignalR/Kafka)"
+  },
+  {
+   "id": 335,
+   "titulo": "Test HU2-1 - Verificar que solo los eventos habilitados generen notificaciones automáticas",
+   "hu": [
+    {
+     "id": 44,
+     "titulo": "HU2-Enviar notificaciones automáticas basadas en eventos del sistema"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Manual",
+   "suite": "",
+   "nota": "Requiere disparar eventos en el backend (Kafka/Outbox)"
+  },
+  {
+   "id": 340,
+   "titulo": "Test HU11-1 - Verificar que una guía muestre la misma información en todas las pantallas",
+   "hu": [
+    {
+     "id": 37,
+     "titulo": "HU10-Consolidar la información de los envíos en una única fuente centralizada"
+    },
+    {
+     "id": 38,
+     "titulo": "HU11-Consultar información centralizada de mis envíos"
+    },
+    {
+     "id": 39,
+     "titulo": "HU1-Actualizar automáticamente los estados de los envíos"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Automatizado",
+   "suite": "TS_Lote2_Automaticos",
+   "nota": ""
+  },
+  {
+   "id": 341,
+   "titulo": "Test HU2-1 - Verificar que el historial muestre todos los cambios de estado en orden",
+   "hu": [
+    {
+     "id": 32,
+     "titulo": "HU5-Visualizar el historial del envío"
+    },
+    {
+     "id": 39,
+     "titulo": "HU1-Actualizar automáticamente los estados de los envíos"
+    },
+    {
+     "id": 41,
+     "titulo": "HU1-Registrar cada cambio en los envíos"
+    },
+    {
+     "id": 42,
+     "titulo": "HU2-Visualizar los cambios del envío"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Automatizado parcial",
+   "suite": "(individual)",
+   "nota": "Requiere hacer antes 3 cambios de estado en BPMS"
+  },
+  {
+   "id": 342,
+   "titulo": "Test HU1-3 - Verificar que el mismo cambio no genere notificaciones duplicadas",
+   "hu": [
+    {
+     "id": 43,
+     "titulo": "HU1-Recibir notificaciones cuando el estado de mi envío cambie"
+    },
+    {
+     "id": 45,
+     "titulo": "HU3-Reintentar el envío de notificaciones fallidas"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Manual",
+   "suite": "",
+   "nota": "Flujo de notificaciones en backend (Kafka/SignalR)"
+  },
+  {
+   "id": 343,
+   "titulo": "Test HU10-1 - Verificar el estado mostrado cuando las fuentes no coinciden",
+   "hu": [
+    {
+     "id": 37,
+     "titulo": "HU10-Consolidar la información de los envíos en una única fuente centralizada"
+    },
+    {
+     "id": 39,
+     "titulo": "HU1-Actualizar automáticamente los estados de los envíos"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Manual",
+   "suite": "",
+   "nota": "Requiere manipular las fuentes de datos / ETL"
+  },
+  {
+   "id": 344,
+   "titulo": "Test HU11-2 - Verificar que cada estado logístico se muestre con su valor real",
+   "hu": [
+    {
+     "id": 33,
+     "titulo": "HU6-Ver detalles completos del envío por medio de iconos"
+    },
+    {
+     "id": 38,
+     "titulo": "HU11-Consultar información centralizada de mis envíos"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Automatizado",
+   "suite": "TS_Lote2_Automaticos",
+   "nota": ""
+  },
+  {
+   "id": 345,
+   "titulo": "Test HU10-2 - Verificar que una guía nueva en las 5 fuentes se consolide en un solo envío",
+   "hu": [
+    {
+     "id": 37,
+     "titulo": "HU10-Consolidar la información de los envíos en una única fuente centralizada"
+    },
+    {
+     "id": 38,
+     "titulo": "HU11-Consultar información centralizada de mis envíos"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Manual",
+   "suite": "",
+   "nota": "Requiere manipular las fuentes de datos / ETL"
+  },
+  {
+   "id": 346,
+   "titulo": "Test HU10-3 - Verificar el manejo de una guía con cliente distinto entre fuentes",
+   "hu": [
+    {
+     "id": 37,
+     "titulo": "HU10-Consolidar la información de los envíos en una única fuente centralizada"
+    },
+    {
+     "id": 126,
+     "titulo": "HU3: Visualización envios"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Manual",
+   "suite": "",
+   "nota": "Requiere manipular las fuentes de datos / ETL"
+  },
+  {
+   "id": 347,
+   "titulo": "Test HU2-1 - Verificar el flujo completo desde una guía nueva hasta la notificación",
+   "hu": [
+    {
+     "id": 37,
+     "titulo": "HU10-Consolidar la información de los envíos en una única fuente centralizada"
+    },
+    {
+     "id": 40,
+     "titulo": "HU2-Integrar múltiples fuentes de datos"
+    },
+    {
+     "id": 43,
+     "titulo": "HU1-Recibir notificaciones cuando el estado de mi envío cambie"
+    },
+    {
+     "id": 126,
+     "titulo": "HU3: Visualización envios"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Manual",
+   "suite": "",
+   "nota": "Flujo de notificaciones en backend (Kafka/SignalR)"
+  },
+  {
+   "id": 348,
+   "titulo": "Test HU10-4 - Verificar que la información centralizada se actualice con los datos más recientes",
+   "hu": [
+    {
+     "id": 3,
+     "titulo": "HU1: Visualización fechas estimadas"
+    },
+    {
+     "id": 37,
+     "titulo": "HU10-Consolidar la información de los envíos en una única fuente centralizada"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Manual",
+   "suite": "",
+   "nota": "Requiere manipular las fuentes de datos / ETL"
+  },
+  {
+   "id": 349,
+   "titulo": "Test HU1-1 - Verificar que los totales del dashboard coincidan con los envíos reales",
+   "hu": [
+    {
+     "id": 120,
+     "titulo": "HU1: Dashboard indicadores"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Automatizado",
+   "suite": "TS_Lote2_Automaticos",
+   "nota": ""
+  },
+  {
+   "id": 350,
+   "titulo": "Test HU1-4 - Verificar que la notificación abra el detalle de la guía correcta",
+   "hu": [
+    {
+     "id": 43,
+     "titulo": "HU1-Recibir notificaciones cuando el estado de mi envío cambie"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Automatizado parcial",
+   "suite": "(individual)",
+   "nota": "Requiere que exista la notificación (la genera el TC 333)"
+  },
+  {
+   "id": 351,
+   "titulo": "Test HU2-1 - Verificar que un cliente no acceda a funciones de administración",
+   "hu": [
+    {
+     "id": 125,
+     "titulo": "HU2: Control de Acceso"
+    },
+    {
+     "id": 129,
+     "titulo": "HU6: Validación permisos API"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Automatizado",
+   "suite": "TS_Lote2_Automaticos",
+   "nota": ""
+  },
+  {
+   "id": 352,
+   "titulo": "Test HU11-3 - Verificar que los datos de una guía coincidan con los de cada fuente",
+   "hu": [
+    {
+     "id": 37,
+     "titulo": "HU10-Consolidar la información de los envíos en una única fuente centralizada"
+    },
+    {
+     "id": 38,
+     "titulo": "HU11-Consultar información centralizada de mis envíos"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Manual",
+   "suite": "",
+   "nota": "Requiere manipular las fuentes de datos / ETL"
+  },
+  {
+   "id": 353,
+   "titulo": "Test HU2-2 - Verificar que el administrador pueda consultar cualquier cliente",
+   "hu": [
+    {
+     "id": 125,
+     "titulo": "HU2: Control de Acceso"
+    },
+    {
+     "id": 127,
+     "titulo": "HU4: Acceso envios clientes"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Automatizado",
+   "suite": "TS_Lote2_Automaticos",
+   "nota": ""
+  },
+  {
+   "id": 354,
+   "titulo": "Test HU10-5 - Verificar una guía que existe solo en una de las fuentes",
+   "hu": [
+    {
+     "id": 3,
+     "titulo": "HU1: Visualización fechas estimadas"
+    },
+    {
+     "id": 37,
+     "titulo": "HU10-Consolidar la información de los envíos en una única fuente centralizada"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Manual",
+   "suite": "",
+   "nota": "Requiere manipular las fuentes de datos / ETL"
+  },
+  {
+   "id": 355,
+   "titulo": "Test HU1-1 - Verificar que el historial coincida con el registro de cambios de la fuente",
+   "hu": [
+    {
+     "id": 41,
+     "titulo": "HU1-Registrar cada cambio en los envíos"
+    },
+    {
+     "id": 42,
+     "titulo": "HU2-Visualizar los cambios del envío"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Manual",
+   "suite": "",
+   "nota": "Requiere manipular las fuentes de datos / ETL"
+  },
+  {
+   "id": 356,
+   "titulo": "Test HU3-4 - Verificar que el cliente vea solo sus envíos en todas las pantallas",
+   "hu": [
+    {
+     "id": 126,
+     "titulo": "HU3: Visualización envios"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Automatizado",
+   "suite": "TS_Lote2_Automaticos",
+   "nota": ""
+  },
+  {
+   "id": 357,
+   "titulo": "Test HU4-3 - Verificar que un cliente no pueda consultar otro cliente con idQueryClient",
+   "hu": [
+    {
+     "id": 127,
+     "titulo": "HU4: Acceso envios clientes"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Automatizado",
+   "suite": "TS_Lote2_Automaticos",
+   "nota": ""
+  },
+  {
+   "id": 358,
+   "titulo": "Test HU2-3 - Verificar que un usuario sin rol no obtenga datos",
+   "hu": [
+    {
+     "id": 124,
+     "titulo": "HU1: Gestión roles"
+    },
+    {
+     "id": 125,
+     "titulo": "HU2: Control de Acceso"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Automatizado",
+   "suite": "TS_Lote2_Automaticos",
+   "nota": ""
+  },
+  {
+   "id": 359,
+   "titulo": "Test HU4-4 - Verificar que el analista vea solo los clientes que tiene asignados",
+   "hu": [
+    {
+     "id": 29,
+     "titulo": "HU2-Visualizar los envíos asignados o disponibles"
+    },
+    {
+     "id": 127,
+     "titulo": "HU4: Acceso envios clientes"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Automatizado",
+   "suite": "TS_Lote2_Automaticos",
+   "nota": ""
+  },
+  {
+   "id": 360,
+   "titulo": "Test HU2-2 - Verificar que un registro sin número de guía no cree un envío",
+   "hu": [
+    {
+     "id": 40,
+     "titulo": "HU2-Integrar múltiples fuentes de datos"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Manual",
+   "suite": "",
+   "nota": "Requiere manipular las fuentes de datos / ETL"
+  },
+  {
+   "id": 361,
+   "titulo": "Test HU10-6 - Verificar el manejo de una guía repetida dentro de la misma fuente",
+   "hu": [
+    {
+     "id": 37,
+     "titulo": "HU10-Consolidar la información de los envíos en una única fuente centralizada"
+    },
+    {
+     "id": 40,
+     "titulo": "HU2-Integrar múltiples fuentes de datos"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Manual",
+   "suite": "",
+   "nota": "Requiere manipular las fuentes de datos / ETL"
+  },
+  {
+   "id": 362,
+   "titulo": "Test HU1-5 - Verificar que cada cambio de estado genere su propia notificación",
+   "hu": [
+    {
+     "id": 43,
+     "titulo": "HU1-Recibir notificaciones cuando el estado de mi envío cambie"
+    },
+    {
+     "id": 44,
+     "titulo": "HU2-Enviar notificaciones automáticas basadas en eventos del sistema"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Manual",
+   "suite": "",
+   "nota": "Flujo de notificaciones en backend (Kafka/SignalR)"
+  },
+  {
+   "id": 363,
+   "titulo": "Test HU1-6 - Verificar que la notificación llegue solo al cliente dueño de la guía",
+   "hu": [
+    {
+     "id": 43,
+     "titulo": "HU1-Recibir notificaciones cuando el estado de mi envío cambie"
+    },
+    {
+     "id": 126,
+     "titulo": "HU3: Visualización envios"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Manual",
+   "suite": "",
+   "nota": "Flujo de notificaciones en backend (Kafka/SignalR)"
+  },
+  {
+   "id": 364,
+   "titulo": "Test HU2-3 - Verificar que la falla de una fuente no afecte a las demás",
+   "hu": [
+    {
+     "id": 40,
+     "titulo": "HU2-Integrar múltiples fuentes de datos"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Manual",
+   "suite": "",
+   "nota": "Requiere manipular las fuentes de datos / ETL"
+  },
+  {
+   "id": 365,
+   "titulo": "Test HU3-5 - Verificar que cambiar el idClient en la petición no muestre datos de otro cliente",
+   "hu": [
+    {
+     "id": 126,
+     "titulo": "HU3: Visualización envios"
+    },
+    {
+     "id": 129,
+     "titulo": "HU6: Validación permisos API"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Automatizado",
+   "suite": "TS_Lote2_Automaticos",
+   "nota": ""
+  },
+  {
+   "id": 366,
+   "titulo": "Test HU3-6 - Verificar que no se puedan recibir notificaciones de otro cliente en tiempo real",
+   "hu": [
+    {
+     "id": 126,
+     "titulo": "HU3: Visualización envios"
+    },
+    {
+     "id": 129,
+     "titulo": "HU6: Validación permisos API"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Manual",
+   "suite": "",
+   "nota": "Flujo de notificaciones en backend (Kafka/SignalR)"
+  },
+  {
+   "id": 367,
+   "titulo": "Test HU3-7 - Verificar que no se puedan leer ni modificar notificaciones de otro cliente",
+   "hu": [
+    {
+     "id": 126,
+     "titulo": "HU3: Visualización envios"
+    },
+    {
+     "id": 129,
+     "titulo": "HU6: Validación permisos API"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Manual",
+   "suite": "",
+   "nota": "Seguridad de servicios backend o de las fuentes"
+  },
+  {
+   "id": 368,
+   "titulo": "Test HU6-1 - Verificar que las fuentes no entreguen ni borren datos sin autenticación",
+   "hu": [
+    {
+     "id": 129,
+     "titulo": "HU6: Validación permisos API"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Manual",
+   "suite": "",
+   "nota": "Seguridad de servicios backend o de las fuentes"
+  },
+  {
+   "id": 369,
+   "titulo": "Test HU10-7 - Verificar que al menos el 99 % de las guías coincidan con las fuentes",
+   "hu": [
+    {
+     "id": 37,
+     "titulo": "HU10-Consolidar la información de los envíos en una única fuente centralizada"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Manual",
+   "suite": "",
+   "nota": "Requiere manipular las fuentes de datos / ETL"
+  },
+  {
+   "id": 370,
+   "titulo": "Test HU2-2 - Verificar que un comentario en la fuente genere su notificación",
+   "hu": [
+    {
+     "id": 44,
+     "titulo": "HU2-Enviar notificaciones automáticas basadas en eventos del sistema"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Manual",
+   "suite": "",
+   "nota": "Flujo de notificaciones en backend (Kafka/SignalR)"
+  },
+  {
+   "id": 371,
+   "titulo": "Test HU2-3 - Verificar que una falla de notificaciones no congele el estado del envío",
+   "hu": [
+    {
+     "id": 39,
+     "titulo": "HU1-Actualizar automáticamente los estados de los envíos"
+    },
+    {
+     "id": 44,
+     "titulo": "HU2-Enviar notificaciones automáticas basadas en eventos del sistema"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Manual",
+   "suite": "",
+   "nota": "Flujo de notificaciones en backend (Kafka/SignalR)"
+  },
+  {
+   "id": 372,
+   "titulo": "Test HU1-7 - Verificar que no se pierdan notificaciones durante una desconexión",
+   "hu": [
+    {
+     "id": 43,
+     "titulo": "HU1-Recibir notificaciones cuando el estado de mi envío cambie"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Manual",
+   "suite": "",
+   "nota": "Flujo de notificaciones en backend (Kafka/SignalR)"
+  },
+  {
+   "id": 373,
+   "titulo": "Test HU6-2 - Verificar que los servicios de envíos y notificaciones exijan autenticación",
+   "hu": [
+    {
+     "id": 129,
+     "titulo": "HU6: Validación permisos API"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Automatizado",
+   "suite": "TS_Lote2_Automaticos",
+   "nota": ""
+  },
+  {
+   "id": 374,
+   "titulo": "Test HU3-8 - Verificar que el cliente no vea el ranking de otros clientes en Reportes",
+   "hu": [
+    {
+     "id": 120,
+     "titulo": "HU1: Dashboard indicadores"
+    },
+    {
+     "id": 126,
+     "titulo": "HU3: Visualización envios"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Automatizado",
+   "suite": "TS_Lote2_Automaticos",
+   "nota": ""
+  },
+  {
+   "id": 375,
+   "titulo": "Test HU2-4 - Verificar el manejo de una fuente con estructura incompatible",
+   "hu": [
+    {
+     "id": 40,
+     "titulo": "HU2-Integrar múltiples fuentes de datos"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Manual",
+   "suite": "",
+   "nota": "Requiere manipular las fuentes de datos / ETL"
+  },
+  {
+   "id": 376,
+   "titulo": "Test HU2-5 - Verificar que se use la versión más reciente de los datos de la fuente",
+   "hu": [
+    {
+     "id": 40,
+     "titulo": "HU2-Integrar múltiples fuentes de datos"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Manual",
+   "suite": "",
+   "nota": "Requiere manipular las fuentes de datos / ETL"
+  },
+  {
+   "id": 377,
+   "titulo": "Test HU10-8 - Verificar el manejo de una guía eliminada en la fuente",
+   "hu": [
+    {
+     "id": 37,
+     "titulo": "HU10-Consolidar la información de los envíos en una única fuente centralizada"
+    },
+    {
+     "id": 41,
+     "titulo": "HU1-Registrar cada cambio en los envíos"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Manual",
+   "suite": "",
+   "nota": "Requiere manipular las fuentes de datos / ETL"
+  },
+  {
+   "id": 378,
+   "titulo": "Test HU6-3 - Verificar que los servicios de prueba y de creación de clientes exijan autenticación",
+   "hu": [
+    {
+     "id": 129,
+     "titulo": "HU6: Validación permisos API"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Automatizado",
+   "suite": "(individual)",
+   "nota": "Se corre solo: si falla, crea NIT de prueba en el ambiente"
+  },
+  {
+   "id": 379,
+   "titulo": "Test HU1-8 - Verificar que no se puedan crear notificaciones falsas para un cliente",
+   "hu": [
+    {
+     "id": 43,
+     "titulo": "HU1-Recibir notificaciones cuando el estado de mi envío cambie"
+    },
+    {
+     "id": 129,
+     "titulo": "HU6: Validación permisos API"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Manual",
+   "suite": "",
+   "nota": "Seguridad de servicios backend o de las fuentes"
+  },
+  {
+   "id": 380,
+   "titulo": "Test HU10-9 - Verificar que una guía con espacios o minúsculas no cree un envío duplicado",
+   "hu": [
+    {
+     "id": 34,
+     "titulo": "HU7-Buscar un envío por número de guía"
+    },
+    {
+     "id": 37,
+     "titulo": "HU10-Consolidar la información de los envíos en una única fuente centralizada"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Manual",
+   "suite": "",
+   "nota": "Requiere manipular las fuentes de datos / ETL"
+  },
+  {
+   "id": 381,
+   "titulo": "Test HU1-9 - Verificar que un cambio solo de escritura en el estado no genere notificación",
+   "hu": [
+    {
+     "id": 43,
+     "titulo": "HU1-Recibir notificaciones cuando el estado de mi envío cambie"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Manual",
+   "suite": "",
+   "nota": "Flujo de notificaciones en backend (Kafka/SignalR)"
+  },
+  {
+   "id": 382,
+   "titulo": "Test HU1-4 - Verificar que una guía entregada pase de Mis envíos al Historial",
+   "hu": [
+    {
+     "id": 28,
+     "titulo": "HU1-Lista de mis envíos activos"
+    },
+    {
+     "id": 38,
+     "titulo": "HU11-Consultar información centralizada de mis envíos"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Manual",
+   "suite": "",
+   "nota": "Requiere manipular las fuentes de datos / ETL"
+  },
+  {
+   "id": 383,
+   "titulo": "Test HU2-6 - Verificar que la carga inicial no envíe notificaciones masivas",
+   "hu": [
+    {
+     "id": 40,
+     "titulo": "HU2-Integrar múltiples fuentes de datos"
+    },
+    {
+     "id": 44,
+     "titulo": "HU2-Enviar notificaciones automáticas basadas en eventos del sistema"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Manual",
+   "suite": "",
+   "nota": "Flujo de notificaciones en backend (Kafka/SignalR)"
+  },
+  {
+   "id": 384,
+   "titulo": "Test HU6-4 - Verificar que un token emitido por el API Gateway no dé acceso a los datos",
+   "hu": [
+    {
+     "id": 129,
+     "titulo": "HU6: Validación permisos API"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Manual",
+   "suite": "",
+   "nota": "Seguridad de servicios backend o de las fuentes"
+  },
+  {
+   "id": 385,
+   "titulo": "Test HU2-4 - Verificar que un comentario con hora no genere notificaciones repetidas",
+   "hu": [
+    {
+     "id": 43,
+     "titulo": "HU1-Recibir notificaciones cuando el estado de mi envío cambie"
+    },
+    {
+     "id": 44,
+     "titulo": "HU2-Enviar notificaciones automáticas basadas en eventos del sistema"
+    }
+   ],
+   "responsable": "Alejandro José Acosta Fernández",
+   "tipo": "Manual",
+   "suite": "",
+   "nota": "Flujo de notificaciones en backend (Kafka/SignalR)"
+  }
+ ]
+}

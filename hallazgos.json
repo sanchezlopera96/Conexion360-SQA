@@ -1,0 +1,96 @@
+{
+ "fecha": "2026-10-17",
+ "metodo": "Revisión estática del código (Conexion360_front, Connection360ApiCore) y de los test cases de Azure DevOps. No proviene de ejecuciones.",
+ "hallazgos": [
+  {
+   "id": "H-01", "categoria": "Seguridad", "severidad": "Crítica",
+   "titulo": "Un cliente puede consultar los envíos de otro cliente cambiando el idClient de la petición",
+   "detalle": "La API toma el idClient del query string y filtra con él. Para el rol CLIENT no lo compara con el usuario del token: el ClientAccessResolver devuelve una lista vacía sin validar y la lectura de los claims del usuario está comentada. Afecta a myshipments (allshipments, filterShipments, allhistory, filterhistory, detailsshipments), home (totals, filters) y reports/home. El API Gateway no reescribe el parámetro.",
+   "evidencia": "Connection360.Api/Controllers/MyShipmentsController.cs:44-57; Connection360.Application/UseCases/GetMyShipmentsUseCase.cs:43-50; Connection360.Application/Services/ClientAccessResolver.cs:26-27; Connection360.Api/Controllers/HomeController.cs:105-111 (comentado); Connection360.ApiGateway/appsettings.json (ReverseProxy: solo agrega X-Forwarded-By)",
+   "casos": [318, 357, 365],
+   "estado": "Detectado en el código. Se espera que 318 y 365 FALLEN al ejecutarlos.",
+   "recomendacion": "Tomar el documento del cliente desde el token (claim) en el backend y rechazar (403) cualquier idClient distinto."
+  },
+  {
+   "id": "H-02", "categoria": "Seguridad", "severidad": "Alta",
+   "titulo": "Un analista puede ver los clientes asignados a otro colaborador",
+   "detalle": "Para ANALISTAOPE y ANALISTASAC, los clientes permitidos se buscan con el idClient recibido en la URL (GetCustomersByCollaboratorAsync(request.IdClient)). Si el analista envía el documento de otro colaborador, obtiene los clientes de ese colaborador.",
+   "evidencia": "Connection360.Application/Services/ClientAccessResolver.cs:26-46",
+   "casos": [359],
+   "estado": "Detectado en el código. El TC359 solo valida la interfaz y no lo detecta; falta un caso de API.",
+   "recomendacion": "Igual que H-01: identificar al colaborador por el token. Agregar en Azure un caso de API para analistas."
+  },
+  {
+   "id": "H-03", "categoria": "Seguridad", "severidad": "Crítica",
+   "titulo": "Cuatro servicios sin autenticación permiten crear datos",
+   "detalle": "GET /settings/createcustomerdb, GET /settings/createcollaboratordb, GET /settings/createcustomercollaboratordb y POST /settings/generatenotificationOutboxTest están marcados con [AllowAnonymous]. Los tres GET crean registros en la base de datos, y el POST genera eventos de notificación.",
+   "evidencia": "Connection360.Api/Controllers/SettingsController.cs:276-325",
+   "casos": [378],
+   "estado": "Detectado en el código. El TC378 FALLARÁ y, al ejecutarlo, creará los NIT de prueba 999000111 y 999000112: no correrlo en el ambiente compartido hasta corregir.",
+   "recomendacion": "Quitar [AllowAnonymous] (o retirar los servicios de prueba del despliegue) y no crear datos con métodos GET."
+  },
+  {
+   "id": "H-04", "categoria": "Seguridad", "severidad": "Crítica",
+   "titulo": "Un servicio sin autenticación devuelve todas las notificaciones de todos los clientes",
+   "detalle": "GET /notifications/allnotificationslistTest está marcado con [AllowAnonymous] y devuelve la lista completa de notificaciones almacenadas, sin filtrar por cliente.",
+   "evidencia": "Connection360Notification.Api/Controllers/NotificationsController.cs:91-99",
+   "casos": [378, 367],
+   "estado": "Detectado en el código.",
+   "recomendacion": "Eliminar el servicio de prueba o exigir autenticación y filtrar por cliente."
+  },
+  {
+   "id": "H-05", "categoria": "Seguridad", "severidad": "Media",
+   "titulo": "El API Gateway tiene credenciales escritas en el código y emite tokens con el mismo emisor que Auth0",
+   "detalle": "TokenEndpoints define tres clientes (admin-client, editor-client, reader-client) con sus secretos en el código y firma tokens con el mismo Issuer y Audience que usa Auth0. La API valida la firma con las llaves de Auth0 (Authority), así que lo más probable es que rechace esos tokens, pero hay que confirmarlo.",
+   "evidencia": "Connection360.ApiGateway/Endpoints/TokenEndpoints.cs:42-55; Connection360.ApiGateway/appsettings.json:10-11; Connection360.Api/Extensions/ServiceCollectionExtensions.cs:120-130",
+   "casos": [384],
+   "estado": "Por confirmar con el TC384 (manual).",
+   "recomendacion": "Sacar los secretos del código (User Secrets o Key Vault) y usar un emisor propio para los tokens del Gateway."
+  },
+  {
+   "id": "H-06", "categoria": "Funcional", "severidad": "Media",
+   "titulo": "El ranking de clientes de Reportes muestra datos simulados",
+   "detalle": "GET /reports/home todavía no devuelve topClients, así que el front completa la tarjeta \"Top clientes por cantidad de envíos\" con datos simulados (mockTopClients). El ADMIN ve un ranking que no es real.",
+   "evidencia": "Conexion360_front/src/app/core/services/api-reports.service.ts:34-49; Conexion360_front/src/app/mocks/data/mock-top-clients.ts",
+   "casos": [374],
+   "estado": "Detectado en el código. La parte del ADMIN del TC374 pasaría, pero con datos simulados.",
+   "recomendacion": "Implementar topClients en /reports/home (filtrado por rol) y retirar el mock."
+  },
+  {
+   "id": "H-07", "categoria": "Casos de prueba", "severidad": "Media",
+   "titulo": "Resultados esperados en Azure que no coinciden con la aplicación",
+   "detalle": "322: el buscador no es obligatorio; con el campo vacío se listan todos los envíos. 306 y 323: el mensaje real es \"Ningún envío coincide con la búsqueda o los filtros seleccionados.\". 304-306: no hay botón Buscar; la búsqueda es automática. 320: no existe una vista global separada. 340: el Dashboard no tiene totales por estado.",
+   "evidencia": "Conexion360_front: core/utils/input-rules.ts (searchQuery.required = false); features/shipments/shipment-list/shipment-list.ts:262-268; features/dashboard/dashboard.ts:183-222",
+   "casos": [304, 305, 306, 320, 322, 323, 340],
+   "estado": "Los scripts de Katalon ya están ajustados al comportamiento real; falta actualizar los casos en Azure.",
+   "recomendacion": "Actualizar pasos y resultados esperados de esos casos en Azure DevOps."
+  },
+  {
+   "id": "H-08", "categoria": "Trazabilidad", "severidad": "Baja",
+   "titulo": "Enlaces invertidos y títulos repetidos en Azure",
+   "detalle": "La HU 35 está enlazada como \"Tests\" al caso 304. Las HU 338 y 339 (creadas como contenedores) usan \"Tests\" hacia 14 casos, en sentido invertido. Hay títulos repetidos entre HU distintas (por ejemplo, \"Test HU2-1\" en 309, 335, 341, 347 y 351).",
+   "evidencia": "Consultas WIQL de vínculos User Story - Test Case (Azure DevOps, 2026-10-17)",
+   "casos": [304, 340, 341, 344, 348, 349, 352, 369, 382, 329, 330, 331, 332, 333, 335],
+   "estado": "Confirmado en Azure.",
+   "recomendacion": "Revisar con Iván si las HU contenedor son intencionales. Corregir el enlace del 304 y numerar los títulos con el ID de la HU."
+  },
+  {
+   "id": "H-09", "categoria": "Cobertura", "severidad": "Media",
+   "titulo": "HU cerradas sin test cases",
+   "detalle": "No tienen ningún caso enlazado con Tested By: 7 (Registro Plataforma), 31 (Ubicación en mapa), 35 (Búsqueda por múltiples criterios; solo tiene el enlace invertido al 304), 123 (Recuperación de contraseña) y 213 (Integridad de datos).",
+   "evidencia": "BackLog.xlsx y vínculos de Azure DevOps (2026-10-17)",
+   "casos": [],
+   "estado": "Confirmado en Azure.",
+   "recomendacion": "Crear al menos un caso por HU cerrada."
+  },
+  {
+   "id": "H-10", "categoria": "Ambiente", "severidad": "Alta",
+   "titulo": "No se ha podido ejecutar ningún caso: falta el ambiente y los usuarios de prueba",
+   "detalle": "Los 37 casos automatizados están listos en Katalon, pero el Profile no tiene la URL del front, la URL de la API ni las credenciales de los usuarios de prueba (Cliente A, cliente sin envíos, Cliente D, ADMIN, analista y usuario sin rol). Además, la URL desplegada debe estar en las Allowed Callback URLs de Auth0.",
+   "evidencia": "katalon/Conexion360/Profiles/default.glbl (valores COMPLETAR)",
+   "casos": [],
+   "estado": "Bloqueante.",
+   "recomendacion": "Completar el Profile y ejecutar primero TS_Smoke_3Casos (373, 312, 309)."
+  }
+ ]
+}
