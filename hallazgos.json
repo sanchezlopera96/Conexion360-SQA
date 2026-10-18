@@ -85,12 +85,30 @@
   },
   {
    "id": "H-10", "categoria": "Ambiente", "severidad": "Alta",
-   "titulo": "No se ha podido ejecutar ningún caso: falta el ambiente y los usuarios de prueba",
-   "detalle": "Los 37 casos automatizados están listos en Katalon, pero el Profile no tiene la URL del front, la URL de la API ni las credenciales de los usuarios de prueba (Cliente A, cliente sin envíos, Cliente D, ADMIN, analista y usuario sin rol). Además, la URL desplegada debe estar en las Allowed Callback URLs de Auth0.",
-   "evidencia": "katalon/Conexion360/Profiles/default.glbl (valores COMPLETAR)",
-   "casos": [],
-   "estado": "Bloqueante.",
-   "recomendacion": "Completar el Profile y ejecutar primero TS_Smoke_3Casos (373, 312, 309)."
+   "titulo": "La API devolvió 503 durante toda la ejecución del 18-oct y faltan usuarios de prueba",
+   "detalle": "El 2026-10-18 se ejecutaron los casos automatizados contra https://conexion360.space. La API (Worker de Cloudflare frente al backend) respondió 503 a todas las peticiones, incluso sin token, así que el proxy de Cloudflare no alcanza el backend. Las listas, el detalle y el Dashboard quedaron vacíos. Además, siguen en COMPLETAR los usuarios cliente sin envíos (C), Cliente D, ADMIN, analista y usuario sin rol. Las guías de prueba (HBLQA0001, HBLQA0003, HBLQA0004) son del NIT 900111222 y no del cliente usado, 3127584817.",
+   "evidencia": "Reports/20261018_163618 (P1), Reports/20261018_165316 (Lote2), Reports/20261018_170614 (TS_Reejecucion). TC373 y TC351: 'responde 503 (esperado 401/403)'.",
+   "casos": [304, 307, 308, 316, 318, 319, 321, 324, 325, 340, 341, 344, 349, 350, 351, 353, 356, 358, 359, 373, 374],
+   "estado": "Bloqueante. Casi todos los fallos de esta ejecución son del ambiente y no de la aplicación.",
+   "recomendacion": "Levantar el backend detrás del Worker, completar los usuarios del Profile y cargar guías del cliente 3127584817 (o usar un cliente del NIT 900111222). Luego repetir P1, Lote2 y TS_Reejecucion."
+  },
+  {
+   "id": "H-11", "categoria": "Casos de prueba", "severidad": "Alta",
+   "titulo": "Casos que salieron Pasó el 18-oct sin haber probado nada (falsos positivos)",
+   "detalle": "357 y 365 verifican solo que la respuesta no contenga guías del Cliente B; la página de error del 503 tampoco las contiene, y en 365 los /home/totals propio y ajeno son el mismo 503. 317 acepta 'No se pudo cargar el detalle', que aparece por el 503. 313 usó el Cliente D con correo COMPLETAR, así que no bloqueó ninguna cuenta real. Estos resultados no son válidos.",
+   "evidencia": "Scripts de TC357, TC365, TC317 y TC313; TS_Reejecucion 20261018_170614 y TS_P1_RutaCritica 20261018_163618.",
+   "casos": [313, 317, 357, 365],
+   "estado": "Resultados inválidos; repetir con el ambiente arriba.",
+   "recomendacion": "Agregar a 357 y 365 un paso de control como el de 318 (la consulta propia debe responder 200 con datos) antes de evaluar la consulta ajena. En 317, exigir 'Envío no encontrado' y no aceptar el error de carga."
+  },
+  {
+   "id": "H-12", "categoria": "Automatización", "severidad": "Media",
+   "titulo": "Dos defectos del keyword Helpers, corregidos el 18-oct",
+   "detalle": "(1) llamarApiCon usaba WebUI.executeAsyncJavaScript, que no existe en Katalon: todos los casos con llamadas a la API terminaban en Error. Ahora usa JavascriptExecutor.executeAsyncScript de Selenium. (2) css() y xpath() usaban el selector como id del TestObject; el self-healing lo usa como ruta de archivo y fallaba con las comillas (TC324). Ahora el id es un hash del selector.",
+   "evidencia": "Keywords/conexion360/Helpers.groovy; errores MissingMethodException e InvalidPathException en Reports/20261018_163618 y 20261018_165316.",
+   "casos": [318, 324, 351, 357, 365, 373],
+   "estado": "Corregido. Los 6 casos se repitieron en TS_Reejecucion y ahora fallan o pasan por el ambiente, no por el script.",
+   "recomendacion": "Ninguna adicional."
   }
  ]
 }
